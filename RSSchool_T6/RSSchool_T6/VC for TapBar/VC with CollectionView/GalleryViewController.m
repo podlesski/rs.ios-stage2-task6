@@ -117,7 +117,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     GalleryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newCell" forIndexPath:indexPath];
-    PHAsset *asset = self.assetsFetchResults[indexPath.item];
+    long int index = (indexPath.section * 3) + indexPath.row;
+    PHAsset *asset = self.assetsFetchResults[index];
     [self.imageManager requestImageForAsset:asset targetSize:cell.screenshot.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info)
     {
         cell.screenshot.contentMode = UIViewContentModeScaleAspectFill;
@@ -141,7 +142,8 @@
 //MARK: -> Item was selected
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.fileDetailsViewController = [[FileDetailsViewController alloc] init];
-    PHAsset *asset = self.assetsFetchResults[indexPath.item];
+    long int index = (indexPath.section * 3) + indexPath.row;
+    PHAsset *asset = self.assetsFetchResults[index];
     [self.imageManager requestImageForAsset:asset targetSize:self.fileDetailsViewController.screenshot.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info)
     {
         self.fileDetailsViewController.screenshot.contentMode = UIViewContentModeScaleAspectFill;

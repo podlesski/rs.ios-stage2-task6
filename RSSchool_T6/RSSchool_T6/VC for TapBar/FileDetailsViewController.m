@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIButton *shareButton;
 @property (nonatomic, strong) UIButton *back;
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+
 @end
 
 @implementation FileDetailsViewController
@@ -61,7 +63,7 @@
     [self.header.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
 }
 
-//MARK: -> Set UpScreenshot
+//MARK: -> Set Up Screenshot
 - (void) setUpScreenshot {
     self.screenshot = [[UIImageView alloc] init];
     [[self view] addSubview:self.screenshot];

@@ -17,8 +17,8 @@
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITableView *tableView;
-@property(nonatomic , strong) PHFetchResult *assetsFetchResults;
-@property(nonatomic , strong) PHCachingImageManager *imageManager;
+@property (nonatomic , strong) PHFetchResult *assetsFetchResults;
+@property (nonatomic , strong) PHCachingImageManager *imageManager;
 @property (nonatomic, strong) FileDetailsViewController *fileDetailsViewController;
 
 @end
@@ -77,7 +77,9 @@
 - (void) setUpTableViewConstraint {
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint activateConstraints: @[
-    [self.tableView.widthAnchor constraintEqualToConstant:self.view.frame.size.width],
+    [self.tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+    [self.tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+//    [self.tableView.widthAnchor constraintEqualToConstant:self.view.frame.size.width],
     [self.tableView.topAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:5],
     [self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]]];
 }

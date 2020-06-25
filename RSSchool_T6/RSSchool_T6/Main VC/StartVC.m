@@ -128,8 +128,8 @@
 - (void) setUpStackViewConstraints {
     self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.stackView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
-    [self.stackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant: 35].active = YES;
-    [self.stackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant: -35].active = YES;
+    [self.stackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.stackView.widthAnchor constraintEqualToConstant:280].active = YES;
 }
 
 //MARK: -> Set Up Label
@@ -143,7 +143,7 @@
 - (void) setUpLabelConstraints {
     self.startLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self.startLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.startLabel.bottomAnchor constraintEqualToAnchor:self.stackView.topAnchor constant: -100].active = YES;
+    [self.startLabel.bottomAnchor constraintEqualToAnchor:self.stackView.topAnchor constant:-50].active = YES;
 }
 
 //MARK: -> Set Up Button
@@ -163,7 +163,7 @@
     [self.startButton.heightAnchor constraintEqualToConstant:55.5].active = YES;
     [self.startButton.widthAnchor constraintEqualToConstant:250].active = YES;
     [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.startButton.topAnchor constraintEqualToAnchor:self.stackView.bottomAnchor constant: 100].active = YES;
+    [self.startButton.topAnchor constraintEqualToAnchor:self.stackView.bottomAnchor constant: 50].active = YES;
 }
 
 //MARK: -> Actions
