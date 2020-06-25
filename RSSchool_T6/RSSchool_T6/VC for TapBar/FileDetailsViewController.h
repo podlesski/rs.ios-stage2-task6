@@ -14,10 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FileDetailsViewController : UIViewController
 
 @property (nonatomic, strong) UIImageView *screenshot;
+
 @property (nonatomic, strong) UILabel *name;
 @property (nonatomic, strong) UILabel *createDate;
 @property (nonatomic, strong) UILabel *modificationDate;
 @property (nonatomic, strong) UILabel *type;
+
 @property (nonatomic, strong) UIImage *someData;
 
 @end

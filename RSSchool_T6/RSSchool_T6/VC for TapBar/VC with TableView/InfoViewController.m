@@ -17,10 +17,8 @@
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITableView *tableView;
-
 @property(nonatomic , strong) PHFetchResult *assetsFetchResults;
 @property(nonatomic , strong) PHCachingImageManager *imageManager;
-
 @property (nonatomic, strong) FileDetailsViewController *fileDetailsViewController;
 
 @end

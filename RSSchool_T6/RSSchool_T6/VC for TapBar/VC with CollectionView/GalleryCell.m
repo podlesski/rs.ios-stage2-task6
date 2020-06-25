@@ -13,11 +13,11 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
     if (self) {
+        
+        //MARK: -> Set Up Screenshot
         self.screenshot = [[UIImageView alloc] init];
         [self addSubview:self.screenshot];
-        
         self.screenshot.translatesAutoresizingMaskIntoConstraints = NO;
         
         [NSLayoutConstraint activateConstraints: @[

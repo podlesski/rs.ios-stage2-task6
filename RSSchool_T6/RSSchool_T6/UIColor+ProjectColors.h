@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (ProjectColors)
 
 + (UIColor *)setColorFromAssets:(NSString *)nameColor;
-
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
 @end
