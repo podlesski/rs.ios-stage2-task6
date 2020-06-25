@@ -8,6 +8,7 @@
 
 #import "GitCVViewController.h"
 #import "UIColor+ProjectColors.h"
+#import "StartVC.h"
 
 @interface GitCVViewController ()
 
@@ -25,8 +26,8 @@
 @property (nonatomic, strong) UILabel *model;
 @property (nonatomic, strong) UILabel *system;
 
-@property (nonatomic, strong) UIButton *cvButton;
 @property (nonatomic, strong) UIButton *startButton;
+@property (nonatomic, strong) UIButton *buttonWithCV;
 
 
 @end
@@ -49,25 +50,25 @@
     self.bottomView.translatesAutoresizingMaskIntoConstraints = NO;
     
     //MARK: -> Buttons
+    self.buttonWithCV = [[UIButton alloc] init];
+    self.buttonWithCV.layer.cornerRadius = 25;
+    [self.buttonWithCV setTitle: @"Open Git CV" forState:UIControlStateNormal];
+    [self.buttonWithCV setTitleColor: [UIColor setColorFromAssets: @"projectBlack"] forState:UIControlStateNormal];
+    self.buttonWithCV.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:20];
+    self.buttonWithCV.backgroundColor = [UIColor setColorFromAssets: @"projectYellow"];
+    
+    [self.view addSubview:self.buttonWithCV];
+    [self.buttonWithCV addTarget:self action:@selector(buttonCVClick) forControlEvents:UIControlEventTouchUpInside];
+    
     self.startButton = [[UIButton alloc] init];
     self.startButton.layer.cornerRadius = 25;
-    [self.startButton setTitle: @"Open Git CV" forState:UIControlStateNormal];
-    [self.startButton setTitleColor: [UIColor setColorFromAssets: @"projectBlack"] forState:UIControlStateNormal];
+    [self.startButton setTitle: @"Go to start!" forState:UIControlStateNormal];
+    [self.startButton setTitleColor: [UIColor setColorFromAssets: @"projectWhite"] forState:UIControlStateNormal];
     self.startButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:20];
-    self.startButton.backgroundColor = [UIColor setColorFromAssets: @"projectYellow"];
+    self.startButton.backgroundColor = [UIColor setColorFromAssets: @"projectRed"];
     
     [self.view addSubview:self.startButton];
     [self.startButton addTarget:self action:@selector(buttonStartClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.cvButton = [[UIButton alloc] init];
-    self.cvButton.layer.cornerRadius = 25;
-    [self.cvButton setTitle: @"Go to start!" forState:UIControlStateNormal];
-    [self.cvButton setTitleColor: [UIColor setColorFromAssets: @"projectBlack"] forState:UIControlStateNormal];
-    self.cvButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:20];
-    self.cvButton.backgroundColor = [UIColor setColorFromAssets: @"projectRed"];
-    
-    [self.view addSubview:self.cvButton];
-    [self.cvButton addTarget:self action:@selector(buttonStartClick) forControlEvents:UIControlEventTouchUpInside];
     
     //MARK: -> Logo
     
@@ -143,23 +144,35 @@
     [self.system.centerYAnchor constraintEqualToAnchor:self.topView.centerYAnchor constant:25.0].active = YES;
     
     
-    [self.bottomView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant: 35.0 ].active = YES;
+    [self.bottomView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant: 40.0 ].active = YES;
     [self.bottomView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [self.bottomView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
     [self.bottomView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
     
-    [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.startButton.topAnchor constraintEqualToAnchor:self.bottomView.centerYAnchor constant: - 30].active = YES;
+    self.buttonWithCV.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.buttonWithCV.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.buttonWithCV.topAnchor constraintEqualToAnchor:self.bottomView.centerYAnchor constant: -100].active = YES;
+    [self.buttonWithCV.heightAnchor constraintEqualToConstant:55.5].active = YES;
+    [self.buttonWithCV.widthAnchor constraintEqualToConstant:250].active = YES;
     
-    [self.cvButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.cvButton.bottomAnchor constraintEqualToAnchor:self.bottomView.bottomAnchor constant: -5].active = YES;
+    self.startButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.startButton.bottomAnchor constraintEqualToAnchor:self.bottomView.centerYAnchor constant: 30].active = YES;
+    [self.startButton.heightAnchor constraintEqualToConstant:55.5].active = YES;
+    [self.startButton.widthAnchor constraintEqualToConstant:250].active = YES;
     
 }
 
-- (void) buttonStartClick {
-    NSURL* url = [[NSURL alloc] initWithString: @"https://podlesski.github.io/rsschool-cv/cv"];
-    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+- (void) buttonCVClick {
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://podlesski.github.io/rsschool-cv/cv"] options: @{} completionHandler: nil];
     NSLog(@"Done");
 }
 
+- (void) buttonStartClick {
+    [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+    [self.tabBarController.view removeFromSuperview];
+}
+
+
+//sf and present in vc
 @end

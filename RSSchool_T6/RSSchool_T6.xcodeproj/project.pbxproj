@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF595FEE24A4C664003DCF4C /* FileDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF595FED24A4C664003DCF4C /* FileDetailsViewController.m */; };
 		FF5BC04424A0D2DF00562DE1 /* RSNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5BC04324A0D2DF00562DE1 /* RSNavigationViewController.m */; };
 		FF5BC04724A26E6100562DE1 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5BC04624A26E6100562DE1 /* InfoCell.m */; };
 		FF5BC04A24A2BC4200562DE1 /* GalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5BC04924A2BC4100562DE1 /* GalleryCell.m */; };
 		FFD3A73E249FA89E00A85F23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3A73D249FA89E00A85F23 /* AppDelegate.m */; };
 		FFD3A741249FA89E00A85F23 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3A740249FA89E00A85F23 /* SceneDelegate.m */; };
-		FFD3A744249FA89E00A85F23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3A743249FA89E00A85F23 /* ViewController.m */; };
+		FFD3A744249FA89E00A85F23 /* StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3A743249FA89E00A85F23 /* StartVC.m */; };
 		FFD3A747249FA89E00A85F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD3A745249FA89E00A85F23 /* Main.storyboard */; };
 		FFD3A749249FA8A100A85F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD3A748249FA8A100A85F23 /* Assets.xcassets */; };
 		FFD3A74C249FA8A100A85F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD3A74A249FA8A100A85F23 /* LaunchScreen.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF595FEC24A4C664003DCF4C /* FileDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDetailsViewController.h; sourceTree = "<group>"; };
+		FF595FED24A4C664003DCF4C /* FileDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDetailsViewController.m; sourceTree = "<group>"; };
 		FF5BC04224A0D2DF00562DE1 /* RSNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSNavigationViewController.h; sourceTree = "<group>"; };
 		FF5BC04324A0D2DF00562DE1 /* RSNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSNavigationViewController.m; sourceTree = "<group>"; };
 		FF5BC04524A26E6100562DE1 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -36,8 +39,8 @@
 		FFD3A73D249FA89E00A85F23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFD3A73F249FA89E00A85F23 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		FFD3A740249FA89E00A85F23 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FFD3A742249FA89E00A85F23 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FFD3A743249FA89E00A85F23 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFD3A742249FA89E00A85F23 /* StartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartVC.h; sourceTree = "<group>"; };
+		FFD3A743249FA89E00A85F23 /* StartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartVC.m; sourceTree = "<group>"; };
 		FFD3A746249FA89E00A85F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFD3A748249FA8A100A85F23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFD3A74B249FA8A100A85F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +69,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF595FEF24A507DC003DCF4C /* VC with TableView */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3A75E24A074EC00A85F23 /* InfoViewController.h */,
+				FFD3A75F24A074EC00A85F23 /* InfoViewController.m */,
+				FF5BC04524A26E6100562DE1 /* InfoCell.h */,
+				FF5BC04624A26E6100562DE1 /* InfoCell.m */,
+			);
+			path = "VC with TableView";
+			sourceTree = "<group>";
+		};
+		FF595FF024A5087A003DCF4C /* VC with CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3A76124A0750E00A85F23 /* GalleryViewController.h */,
+				FFD3A76224A0750E00A85F23 /* GalleryViewController.m */,
+				FF5BC04824A2BC4100562DE1 /* GalleryCell.h */,
+				FF5BC04924A2BC4100562DE1 /* GalleryCell.m */,
+			);
+			path = "VC with CollectionView";
+			sourceTree = "<group>";
+		};
 		FFD3A730249FA89E00A85F23 = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +131,12 @@
 		FFD3A75B24A0746500A85F23 /* VC for TapBar */ = {
 			isa = PBXGroup;
 			children = (
-				FFD3A75E24A074EC00A85F23 /* InfoViewController.h */,
-				FFD3A75F24A074EC00A85F23 /* InfoViewController.m */,
-				FF5BC04524A26E6100562DE1 /* InfoCell.h */,
-				FF5BC04624A26E6100562DE1 /* InfoCell.m */,
-				FFD3A76124A0750E00A85F23 /* GalleryViewController.h */,
-				FFD3A76224A0750E00A85F23 /* GalleryViewController.m */,
-				FF5BC04824A2BC4100562DE1 /* GalleryCell.h */,
-				FF5BC04924A2BC4100562DE1 /* GalleryCell.m */,
+				FF595FEF24A507DC003DCF4C /* VC with TableView */,
+				FF595FF024A5087A003DCF4C /* VC with CollectionView */,
 				FFD3A76424A0754900A85F23 /* GitCVViewController.h */,
 				FFD3A76524A0754900A85F23 /* GitCVViewController.m */,
+				FF595FEC24A4C664003DCF4C /* FileDetailsViewController.h */,
+				FF595FED24A4C664003DCF4C /* FileDetailsViewController.m */,
 			);
 			path = "VC for TapBar";
 			sourceTree = "<group>";
@@ -134,8 +155,8 @@
 		FFD3A75D24A0749A00A85F23 /* Main VC */ = {
 			isa = PBXGroup;
 			children = (
-				FFD3A742249FA89E00A85F23 /* ViewController.h */,
-				FFD3A743249FA89E00A85F23 /* ViewController.m */,
+				FFD3A742249FA89E00A85F23 /* StartVC.h */,
+				FFD3A743249FA89E00A85F23 /* StartVC.m */,
 			);
 			path = "Main VC";
 			sourceTree = "<group>";
@@ -210,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD3A744249FA89E00A85F23 /* ViewController.m in Sources */,
+				FFD3A744249FA89E00A85F23 /* StartVC.m in Sources */,
 				FFD3A76324A0750E00A85F23 /* GalleryViewController.m in Sources */,
 				FFD3A73E249FA89E00A85F23 /* AppDelegate.m in Sources */,
 				FF5BC04424A0D2DF00562DE1 /* RSNavigationViewController.m in Sources */,
@@ -218,6 +239,7 @@
 				FFD3A74F249FA8A100A85F23 /* main.m in Sources */,
 				FFD3A75A24A04E8300A85F23 /* RSTapBarViewController.m in Sources */,
 				FFD3A741249FA89E00A85F23 /* SceneDelegate.m in Sources */,
+				FF595FEE24A4C664003DCF4C /* FileDetailsViewController.m in Sources */,
 				FFD3A76624A0754900A85F23 /* GitCVViewController.m in Sources */,
 				FFD3A76024A074EC00A85F23 /* InfoViewController.m in Sources */,
 				FF5BC04724A26E6100562DE1 /* InfoCell.m in Sources */,

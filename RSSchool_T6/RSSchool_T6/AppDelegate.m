@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "StartVC.h"
 #import "RSNavigationViewController.h"
 
 
@@ -22,7 +22,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[RSNavigationViewController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    self.window.rootViewController = [[RSNavigationViewController alloc] initWithRootViewController:[[StartVC alloc] init]];
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -10,6 +10,7 @@
 #import "UIColor+ProjectColors.h"
 #import <Photos/Photos.h>
 #import "GalleryCell.h"
+#import "FileDetailsViewController.h"
 
 @interface GalleryViewController ()
 
@@ -20,6 +21,8 @@
 
 @property(nonatomic, strong) PHFetchResult *assetsFetchResults;
 @property(nonatomic, strong) PHCachingImageManager *imageManager;
+
+@property (nonatomic, strong) FileDetailsViewController *fileDetailsViewController;
 
 @end
 
@@ -134,5 +137,57 @@
     return UIEdgeInsetsMake(5, 5, 5, 5);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.fileDetailsViewController = [[FileDetailsViewController alloc] init];
+    
+    PHAsset *asset = self.assetsFetchResults[indexPath.item];
+    
+    [self.imageManager requestImageForAsset:asset targetSize:self.fileDetailsViewController.screenshot.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info)
+    {
+        self.fileDetailsViewController.screenshot.contentMode = UIViewContentModeScaleAspectFill;
+        self.fileDetailsViewController.screenshot.layer.masksToBounds = YES;
+        self.fileDetailsViewController.screenshot.image = result;
+        self.fileDetailsViewController.someData = result;
+        
+        self.fileDetailsViewController.name.text = ((PHAssetResource*)self.assetsFetchResults[0]).originalFilename;
+        self.fileDetailsViewController.createDate.text = [self dateToString:asset.creationDate];
+        self.fileDetailsViewController.modificationDate.text = [self dateToString:asset.modificationDate];
+        
+        
+        switch (asset.mediaType) {
+            case PHAssetMediaTypeImage:
+                self.fileDetailsViewController.type.text = @"Image";
+                
+                break;
+            case PHAssetMediaTypeVideo:
+                self.fileDetailsViewController.type.text = @"Video";
+                break;
+            case PHAssetMediaTypeAudio:
+                self.fileDetailsViewController.type.text = @"Audio";
+                break;
+            default:
+                self.fileDetailsViewController.type.text = @"Other";
+                break;
+        }
+    }];
+    
+    
+    UINavigationController *customNVC = [[UINavigationController alloc] initWithRootViewController:self.fileDetailsViewController];
+    [customNVC setNavigationBarHidden:YES];
+    
+    
+    [self presentViewController:customNVC animated:YES completion:nil];
+}
+
+//MARK: -> Date Formatter
+
+- (NSString *) dateToString:(NSDate*)fileDate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"HH:mm:ss dd:MM:YYYY";
+    NSString *result = [formatter stringFromDate:[NSDate date]];
+    
+    return result;
+}
 
 @end
